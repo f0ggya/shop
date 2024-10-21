@@ -3,26 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     <header>
-        <h2>Название магазина</h2>
-        <div class="search_frame">
-            <div class="search_group">
+        <div class="header_settings">
+            <h2>Название магазина</h2>
+            <div class="search_frame">
                 <form class="search_form">
                     <input type="search" style="border-radius: 15px;border: 0;height: 100%;">
                     <input type="submit" style="background-color: transparent;border: 0;">
                 </form>
+                <div class="address_group"></div>
             </div>
-            <div class="address_group"></div>
-        </div>
-        <div class="user_info">
-            <svg width="70px" height="px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#000000" d="M628.736 528.896A416 416 0 0 1 928 928H96a415.872 415.872 0 0 1 299.264-399.104L512 704l116.736-175.104zM720 304a208 208 0 1 1-416 0 208 208 0 0 1 416 0z"/></svg>
+            <div class="user_info">
+                <div style="background-color:white; border-radius: 50%;">
+                    <svg width="40px" height="40px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#000000" d="M628.736 528.896A416 416 0 0 1 928 928H96a415.872 415.872 0 0 1 299.264-399.104L512 704l116.736-175.104zM720 304a208 208 0 1 1-416 0 208 208 0 0 1 416 0z"/></svg>
+                </div>
+            </div>
         </div>
     </header>
+    
     {% block content %}
     {% endblock %}
 </body>

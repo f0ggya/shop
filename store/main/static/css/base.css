@@ -7,19 +7,26 @@ html, body {
     background: linear-gradient(90deg, rgba(41,250,255,1) 0%, rgba(0,138,255,1) 35%, rgba(179,0,255,1) 100%);
 }
 header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    padding: 5px;
 }
 .search_frame {
-    display: flex;
-
+    height: 100%;
+    flex-grow: 1;
 }
-.search_group {
+
+.search_form {
+    padding: 5px;
+    height: 2rem;
+    width: max-content;
     background-color: orange;
     border-radius: 15px;
 }
-.search_form {
+
+.header_settings {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     padding: 5px;
-    height:100%;
+    background-color: rgba(255, 255, 255, 0.219);
+    border-radius: 15px;
 }
