@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 {% block title %}
 Главная
 {% endblock %}
@@ -6,10 +10,15 @@
 
 {% block content %}
 <main>
-    <div>
-        <p></p>
-        <div>
-            <div></div>
+    <div class="row">
+        <h2>Магазины</h2>
+        <div class="shop_row">
+            {% for restaurant in restaurants %}
+            <div class="shop">
+                <img alt="логотип магазина" src="{% static 'img/yandex.png' %}">
+                <h4>{{restaurant.name}}</h4>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </main>

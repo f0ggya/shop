@@ -3,17 +3,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% block css %}
+    {% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header_settings">
-            <h2>Название магазина</h2>
+            <h1>Название магазина</h1>
             <div class="search_frame">
-                <form class="search_form">
-                    <input type="search" style="border-radius: 15px;border: 0;height: 100%;">
+                <form class="search_form" method="post" action="search/">
+                    {% csrf_token %}
+                    <input name="product_name" type="search" style="border-radius: 15px;border: 0;height: 100%;">
                     <input type="submit" style="background-color: transparent;border: 0;">
                 </form>
                 <div class="address_group"></div>
@@ -28,5 +34,6 @@
     
     {% block content %}
     {% endblock %}
+
 </body>
 </html>

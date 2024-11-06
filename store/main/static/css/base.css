@@ -5,6 +5,11 @@ html, body {
     padding: 0;
     background: rgb(41,250,255);
     background: linear-gradient(90deg, rgba(41,250,255,1) 0%, rgba(0,138,255,1) 35%, rgba(179,0,255,1) 100%);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(0, 47, 255);
 }
 header {
     padding: 5px;
@@ -18,7 +23,7 @@ header {
     padding: 5px;
     height: 2rem;
     width: max-content;
-    background-color: orange;
+    background-color: rgba(255, 255, 255, 0.219);
     border-radius: 15px;
 }
 
