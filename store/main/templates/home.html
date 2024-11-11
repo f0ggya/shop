@@ -15,7 +15,7 @@
         <div class="shop_row">
             {% for restaurant in restaurants %}
             <div class="shop">
-                <img alt="логотип магазина" src="{% static 'img/yandex.png' %}">
+                <img alt="логотип магазина" src="/media/{{restaurant.img}}" style="background-color: {{restaurant.background_color}}">
                 <h4>{{restaurant.name}}</h4>
             </div>
             {% endfor %}
