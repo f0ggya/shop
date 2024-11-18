@@ -34,3 +34,13 @@ header {
     background-color: rgba(255, 255, 255, 0.219);
     border-radius: 15px;
 }
+
+.search_panel {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    margin-top: 3px;
+    border-radius: 15px;
+    display: none;
+}

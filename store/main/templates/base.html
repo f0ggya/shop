@@ -17,11 +17,15 @@
         <div class="header_settings">
             <h1>Название магазина</h1>
             <div class="search_frame">
-                <form class="search_form" method="post" action="search/">
-                    {% csrf_token %}
-                    <input name="product_name" type="search" style="border-radius: 15px;border: 0;height: 100%;">
-                    <input type="submit" style="background-color: transparent;border: 0;">
-                </form>
+                <div>
+                    <form class="search_form" method="post" action="search/">
+                        {% csrf_token %}
+                        <input name="product_name" type="search" style="border-radius: 15px;border: 0;height: 100%;" id="search">
+                        <input type="submit" style="background-color: transparent;border: 0;">
+                    </form>
+                    <div class="search_panel"></div>
+
+                </div>
                 <div class="address_group"></div>
             </div>
             <div class="user_info">
@@ -34,6 +38,7 @@
     
     {% block content %}
     {% endblock %}
+    <script src="{% static 'js/search.js' %}"></script>
 
 </body>
 </html>
