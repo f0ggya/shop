@@ -36,11 +36,26 @@ header {
 }
 
 .search_panel {
-    width: 200px;
-    height: 200px;
+    width: 264.781px;
     background-color: rgb(192, 192, 192);
     position: absolute;
     margin-top: 3px;
     border-radius: 15px;
     display: none;
+    flex-direction: column;
+    padding: 5px;
+}
+.item_mini {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    height: fit-content;
+
+}
+.item_mini h5 {
+    flex-grow: 1;
+    margin: 0;
+}
+.item_mini h6 {
+    margin: 0;
 }
