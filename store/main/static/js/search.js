@@ -13,12 +13,13 @@ search_input.addEventListener('input', function() {
     .then(data => {
         for (item in data){
             console.log(item)
-            item_html += '<div class="item_mini"><h5>'+ data[item].name +'</h5><h6>'+data[item].price+'</h6></div>'
+            item_html += '<div class="item_mini" onclick="open_product('+ data[item].id +')"><h5>'+ data[item].name +'</h5><h6>'+data[item].price+'</h6></div>'
         }
         search_panel.innerHTML = item_html
         search_panel.style.display = 'flex';
-        // if (data.lenght == 0) {
-        //     search_panel.style.display = 'none';
-        // }
     })
 })
+
+function open_product(id){
+    window.open('/product/'+id)
+}

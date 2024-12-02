@@ -26,9 +26,16 @@ def search_mini(request):
             need_products.append({
                 'name': product.name,
                 'price': product.price,
-                'img': str(product.img)
+                'img': str(product.img),
+                'id': product.id
             })
     return HttpResponse(dumps(need_products))
+
+def product(request, id):
+    all_products = Products.objects.filter(id=id)[0]
+    return render(request, 'product.html', {'all_products': all_products})
+    
+
             
 
 

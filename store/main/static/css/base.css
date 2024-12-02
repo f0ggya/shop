@@ -43,13 +43,18 @@ header {
     border-radius: 15px;
     display: none;
     flex-direction: column;
-    padding: 5px;
+}
+.item_mini:hover {
+    background-color: rgba(0, 0, 0, 0.11);
+    cursor: pointer;
 }
 .item_mini {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 5px;
     height: fit-content;
+
+
 
 }
 .item_mini h5 {

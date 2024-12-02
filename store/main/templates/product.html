@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/product.css'%}">
+{% endblock %}
+{% block title %}
+{{ all_products.name }}
+{% endblock %}
+{% block content %}
+<div class="product_table">
+    <div class="photo">
+        <img src="/media/{{ all_products.img }}" alt="Картинка продукта" height="400">
+    </div>
+    <div class="product_info">
+        <h2>{{ all_products.name }}</h2>
+        <h5>А также некоторые особенности внутренней политики обнародованы. Лишь независимые государства превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Кстати, активно развивающиеся страны третьего мира объединены в целые кластеры себе подобных.</h5>
+        <h6>{{ all_products.price }}</h6>
+        <div class="buttons">
+            <button>
+                Добавить в корзину
+            </button>
+            <button>
+                Купить сразу
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
