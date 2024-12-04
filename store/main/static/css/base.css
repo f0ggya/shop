@@ -33,6 +33,7 @@ header {
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.219);
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .search_panel {
@@ -53,9 +54,6 @@ header {
     align-items: center;
     margin: 5px;
     height: fit-content;
-
-
-
 }
 .item_mini h5 {
     flex-grow: 1;

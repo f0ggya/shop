@@ -27,7 +27,9 @@ def search_mini(request):
                 'name': product.name,
                 'price': product.price,
                 'img': str(product.img),
-                'id': product.id
+                'id': product.id,
+                'description': str(product.description),
+                'shop': str(product.shop)
             })
     return HttpResponse(dumps(need_products))
 

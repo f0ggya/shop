@@ -1,0 +1,11 @@
+.product_table {
+    display: flex;
+}
+
+.product_info {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+}
