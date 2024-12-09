@@ -1,8 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import *
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from json import loads, dumps
+from django.contrib.auth import authenticate, login
+
 
 def home(request):
     restaurants = Shop_info.objects.filter()
@@ -16,26 +18,39 @@ def search(request):
 @csrf_exempt
 def search_mini(request):
     data = loads(request.body)
-    text = data['text'].lower()
+    text = data['text']
     if text == '':
         return HttpResponse(dumps([]))
-    products = Products.objects.all()
+    products = Products.objects.filter(name__contains=text)
+    print(products)
     need_products = []
     for product in products:
-        if text in product.name.lower():
-            need_products.append({
-                'name': product.name,
-                'price': product.price,
-                'img': str(product.img),
-                'id': product.id,
-                'description': str(product.description),
-                'shop': str(product.shop)
-            })
+        need_products.append({
+            'name': product.name,
+            'price': product.price,
+            'img': str(product.img),
+            'id': product.id,
+            'description': str(product.description),
+            'shop': str(product.shop)
+        })
     return HttpResponse(dumps(need_products))
 
 def product(request, id):
     all_products = Products.objects.filter(id=id)[0]
     return render(request, 'product.html', {'all_products': all_products})
+
+def login(request):
+    data = request.POST
+    login = data['nickname']
+    password = data['password']
+    user = authenticate(request, username=login, password=password)
+    if user is not None:
+        login(request, user)
+        return redirect('/')
+    else:
+         return HttpResponse('false')
+
+
     
 
             
