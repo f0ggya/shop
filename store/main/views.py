@@ -39,11 +39,11 @@ def product(request, id):
     all_products = Products.objects.filter(id=id)[0]
     return render(request, 'product.html', {'all_products': all_products})
 
-def login(request):
+def start_login(request):
     data = request.POST
-    login = data['nickname']
+    login_ = data['nickname']
     password = data['password']
-    user = authenticate(request, username=login, password=password)
+    user = authenticate(request, username=login_, password=password)
     if user is not None:
         login(request, user)
         return redirect('/')

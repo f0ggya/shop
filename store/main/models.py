@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from colorfield.fields import ColorField
 from django.db import models
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 class Shop_info(models.Model):
     name = models.CharField('Название магазина', max_length=255)
@@ -40,7 +43,5 @@ class Cart(models.Model):
         
     def __str__(self):
         return self.owner.username
-    
-    
 
 
