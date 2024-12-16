@@ -23,3 +23,4 @@ search_input.addEventListener('input', function() {
 function open_product(id){
     window.location.replace('/product/'+id)
 }
+

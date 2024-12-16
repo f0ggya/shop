@@ -45,20 +45,89 @@ header {
     display: none;
     flex-direction: column;
 }
+
+.search_frame input[type='search']:focus{
+    transform: scale(1.05);
+}
+
+.search_frame input{
+    transition: 0.15s ease-in-out;
+}
+
 .item_mini:hover {
     background-color: rgba(0, 0, 0, 0.11);
     cursor: pointer;
 }
+
 .item_mini {
     display: flex;
     align-items: center;
     margin: 5px;
     height: fit-content;
 }
+
 .item_mini h5 {
     flex-grow: 1;
     margin: 0;
 }
+
 .item_mini h6 {
     margin: 0;
+}
+
+.reg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg form{
+    background-color: rgb(192, 192, 192);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.reg form input[type='text'], .reg form input[type='password']{
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 7px;
+    transition: 0.15s ease-in-out;
+}
+
+.reg form input[type='text']:focus, .reg form input[type='password']:focus{
+    transform: scale(1.05);
+}
+
+.reg form input[type='submit']{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.authentificated button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.profile_frame{
+    position: relative;    
+}
+
+.profile_frame ul{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none; 
+    list-style: none; 
+}
+
+.profile_frame:hover ul{
+    display: flex;
 }
