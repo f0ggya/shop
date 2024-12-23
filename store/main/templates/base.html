@@ -35,13 +35,15 @@
                     <div style="background-color:white; border-radius: 50%;">
                         <svg width="40px" height="40px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#000000" d="M628.736 528.896A416 416 0 0 1 928 928H96a415.872 415.872 0 0 1 299.264-399.104L512 704l116.736-175.104zM720 304a208 208 0 1 1-416 0 208 208 0 0 1 416 0z"/></svg>
                     </div>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                выйти
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="profile_settings">
+                        <ul>
+                            <li>
+                                <a href="/logout">
+                                    выйти
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 {% else %}
                 <div class="authentificated">
@@ -57,7 +59,7 @@
     {% block content %}
     {% endblock %}
     <div class="reg" id="reg">
-        <form action="start_login/" method="POST">
+        <form action="start_login/" method="POST" class="log_form">
             {% csrf_token %}
             <div>
                 <input type="text" name="nickname">
@@ -67,6 +69,27 @@
             </div>
             <div>
                 <input type="submit" value="Войти">
+            </div>
+            <div>
+                <a onclick="start_reg(this)" style="cursor: pointer">Если нет аккаунта <i style="color:blue">создать</i>?</a>
+            </div>
+        </form>
+        <form action="start_reg/" method="POST" class="reg_form">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="nickname">
+            </div>
+            <div>
+                <input type="password" name="password1">
+            </div>
+            <div>
+                <input type="password" name="password2">
+            </div>
+            <div>
+                <input type="submit" value="Зарегистрироваться">
+            </div>
+            <div>
+                <a onclick="start_reg(this)" style="cursor: pointer">Если есть аккаунт <i style="color:blue">войти</i>?</a>
             </div>
         </form>
     </div>

@@ -3,7 +3,8 @@ from .models import *
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from json import loads, dumps
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -49,6 +50,12 @@ def start_login(request):
         return redirect('/')
     else:
          return HttpResponse('false')
+    
+def profile_logout(request):
+    logout(request)
+    return redirect('/')
+
+
 
 
     

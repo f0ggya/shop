@@ -8,7 +8,9 @@ urlpatterns = [
     path('search/', views.search),
     path('search_mini', views.search_mini),
     path('product/<int:id>', views.product),
-    path('start_login/', views.start_login)
+    path('start_login/', views.start_login),
+    path('logout/', views.profile_logout),
+    path('start_reg/', views.start_reg)
 ]
 
 if settings.DEBUG:

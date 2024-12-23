@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 html, body {
     height: 100%;
     width: 100%;
@@ -120,14 +124,31 @@ header {
     position: relative;    
 }
 
-.profile_frame ul{
+.profile_frame .profile_settings{
     position: absolute;
     top: 100%;
     right: 0;
     display: none; 
-    list-style: none; 
+    padding: 10px;
 }
 
-.profile_frame:hover ul{
+.profile_frame:hover .profile_settings{
     display: flex;
+}
+
+.profile_settings ul{
+    background-color: rgb(192, 192, 192);
+    list-style-type: none;
+    border-radius: 15px 0 15px 15px;
+    padding: 15px;
+}
+
+.profile_settings a{
+    text-decoration: none;
+    color: black;
+}
+
+.reg_form{
+    width: 0;
+    display: none; 
 }
