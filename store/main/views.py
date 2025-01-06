@@ -55,7 +55,21 @@ def profile_logout(request):
     logout(request)
     return redirect('/')
 
+def start_reg(request):
+    data = request.POST
+    login_ = data['nickname']
+    password = data['password1']
+    user = authenticate(request, username=login_, password=password)
+    if user is not None:
+        return HttpResponse('false')
+    User.objects.create_user(login_, '', password)
+    user = authenticate(request, username=login_, password=password)
+    login(request, user)
+    return redirect('/')
 
+def profile(request):
+    return render(request, 'profile.html')
+    
 
 
     

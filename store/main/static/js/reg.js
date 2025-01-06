@@ -18,3 +18,19 @@ function start_reg(elem){
         reg_form.style.width = '0'
     }
 }
+
+const error = document.getElementById('error')
+const reg_button = document.getElementById('reg_button')
+const pass1 = document.getElementById('pass1')
+const pass2 =  document.getElementById('pass2')
+pass2.addEventListener('input', function() {
+    if (pass1.value != pass2.value){
+        console.log('false')
+        reg_button.disabled = true
+        error.innerHTML = '<h5>Пароли не совпадают</h5>'
+    }
+    else{
+        reg_button.disabled = false
+        error.innerHTML = ''
+    }
+})

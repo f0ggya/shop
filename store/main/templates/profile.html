@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/product.css'%}">
+{% endblock %}
+{% block title %}
+{{ all_products.name }}
+{% endblock %}
+{% block content %}
+<div class="all">
+    <aside>
+        <ul>
+            <li>
+                <a>
+                    Основные настройки
+                </a>               
+            </li>
+            <li>
+                <a>
+                    Безопасность
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    выйти
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <div class="profile_settings">
+
+    </div>
+</div>
+{% endblock %}

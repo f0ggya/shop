@@ -38,6 +38,11 @@
                     <div class="profile_settings">
                         <ul>
                             <li>
+                                <a href="/profile">
+                                    профиль
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/logout">
                                     выйти
                                 </a>
@@ -80,13 +85,16 @@
                 <input type="text" name="nickname">
             </div>
             <div>
-                <input type="password" name="password1">
+                <input type="password" name="password1" id="pass1">
             </div>
             <div>
-                <input type="password" name="password2">
+                <input type="password" name="password2" id="pass2">
+            </div>
+            <div class="error" id="error">
+
             </div>
             <div>
-                <input type="submit" value="Зарегистрироваться">
+                <input type="submit" value="Зарегистрироваться" id="reg_button" disabled>
             </div>
             <div>
                 <a onclick="start_reg(this)" style="cursor: pointer">Если есть аккаунт <i style="color:blue">войти</i>?</a>
