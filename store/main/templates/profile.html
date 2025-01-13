@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/product.css'%}">
+<link rel="stylesheet" href="{% static 'css/profile.css'%}">
 {% endblock %}
 {% block title %}
 {{ all_products.name }}
@@ -11,13 +11,11 @@
     <aside>
         <ul>
             <li>
-                <a>
-                    Основные настройки
-                </a>               
+                <a onclick="change_block(this)">Безопасность</a>               
             </li>
             <li>
-                <a>
-                    Безопасность
+                <a onclick="change_block(this)">
+                    Создать магазин
                 </a>
             </li>
             <li>
@@ -28,7 +26,24 @@
         </ul>
     </aside>
     <div class="profile_settings">
-
+        <div>
+            <div class="safety">
+                <div class="change_login">
+                    <input type="text" id="login" name="change_login">
+                </div>
+                <div class="change_password1">
+                    <input type="password" id="password1" name="change_password1">
+                </div>
+                <div class="change_password2">
+                    <input type="password" id="password2" name="change_password2">
+                </div>
+                <button id="safe">сохранить изменения</button>
+            </div>
+            <div class="create_shop invise">
+                <button>создать магазин</button>
+            </div>
+        </div>
     </div>
 </div>
+<script src="{% static 'js/profile.js' %}"></script>
 {% endblock %}

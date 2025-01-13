@@ -1,0 +1,80 @@
+.all{
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+}
+
+aside{
+    background-color:  rgba(0, 0, 0, 0.11);
+    border-radius: 15px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+aside li{
+    margin-bottom: 1em;
+
+}
+
+aside ul{
+    list-style-type: none;
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+}
+
+.profile_settings{
+    flex-grow: 1;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.11);
+    justify-content: center;
+    border-radius: 15px;
+}
+
+input[type="text"], input[type="password"]{
+    padding: 1em 0.5em;
+    margin: 1em;
+    border: 0;
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+    transform: scale(1.15);
+}
+
+.invise{
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.4s ease-in-out;
+}
+
+#safe{
+    padding: 1em 0.5em;
+    margin: 1em;
+    border: 0;
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+
+}
+
+#safe:hover{
+    transform: scale(1.15);
+}
+
+#safe:active{
+    background-color: rgba(0, 0, 0, 0.22);
+}
+
+.create_shop{
+    transition: 0.4s ease-in-out;
+}
+
+.safety{
+    transition: 0.4s ease-in-out;
+}
+
+
+
