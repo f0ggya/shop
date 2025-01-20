@@ -69,6 +69,20 @@ def start_reg(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+@require_http_methods(["POST"])
+@csrf_exempt
+def change_profile(request):
+    data = loads(request.body)
+    login_ = data['login']
+    password1 = data['password1']
+    password2 = data['password2']
+    user = User.objects.get(id = request.user.id)
+    user.set_password(password1)
+    user.username = login_
+    user.save()
+    return redirect('/')
+
     
 
 
