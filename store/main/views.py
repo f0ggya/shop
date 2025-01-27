@@ -83,6 +83,14 @@ def change_profile(request):
     user.save()
     return redirect('/')
 
+@require_http_methods(["POST"])
+@csrf_exempt
+def create_shop(request):
+    user = User.objects.get(id = request.user.id)
+    shop = Shop_info.objects.create(owner=user)
+    js_shop = dumps({'name': shop.name, 'bg': shop.background_color, 'url': shop.url})
+    return HttpResponse(js_shop)
+
     
 
 

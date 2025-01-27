@@ -7,10 +7,11 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class Shop_info(models.Model):
-    name = models.CharField('Название магазина', max_length=255)
-    img = models.ImageField('Лого')
-    url = models.CharField('Ссылка', max_length=255)
+    name = models.CharField('Название магазина', max_length=255, default='Name')
+    img = models.ImageField('Лого', default='magnit.png')
+    url = models.CharField('Ссылка', max_length=255, default='URL')
     background_color = ColorField(default='#FF0000')
+    owner = models.ForeignKey(User, on_delete=models.DO_NOTHING, default=1)
     
     class Meta:
         verbose_name = "Магазин"
