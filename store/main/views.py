@@ -68,7 +68,9 @@ def start_reg(request):
     return redirect('/')
 
 def profile(request):
-    return render(request, 'profile.html')
+    user = User.objects.get(id = request.user.id)
+    shops = Shop_info.objects.filter(owner=user)
+    return render(request, 'profile.html', {'shops': shops})
 
 @require_http_methods(["POST"])
 @csrf_exempt
@@ -91,6 +93,14 @@ def create_shop(request):
     js_shop = dumps({'name': shop.name, 'bg': shop.background_color, 'url': shop.url})
     return HttpResponse(js_shop)
 
+def update(request, id):
+    data = request.POST
+    name = data['name']
+    color = data['color']
+    url = data['url']
+    file_name = data['file']
+    Shop_info.objects.filter(id=id).update(name=name, background_color=color, url=url, img=file_name)
+    return redirect('/')
     
 
 

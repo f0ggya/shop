@@ -7,7 +7,7 @@ const password2 = document.getElementById('password2')
 const create_shopbtn = document.getElementById('create_shop')
 
 function change_block(elem){
-
+    
     if (elem.textContent == 'Безопасность'){
         create_shop.classList.add('invise')
         safety.classList.remove('invise')

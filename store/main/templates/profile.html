@@ -26,7 +26,7 @@
         </ul>
     </aside>
     <div class="profile_settings">
-        <div>
+        <div style="position: relative; width: 100%">
             <div class="safety">
                 <div class="change_login">
                     <input type="text" id="login" name="change_login">
@@ -41,13 +41,16 @@
             </div>
             <div class="create_shop invise">
                 <button id="create_shop">создать магазин</button>
-                <form>
-                    <input type="text" name="name">
-                    <input type="color" name="color" value="#FFFFFF">
-                    <input type="text" name="url">
-                    <input type="file" name="file">
+                {% for shop in shops %}
+                <form action="/update/{{ shop.id }}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" value="{{ shop.name }}">
+                    <input type="color" name="color" value="{{ shop.background_color }}">
+                    <input type="text" name="url"  value="{{ shop.url }}">
+                    <input type="file" name="file"  value="{{ shop.img }}">
                     <input type="submit" value="save">
                 </form>
+                {% endfor %}
             </div>
         </div>
     </div>
