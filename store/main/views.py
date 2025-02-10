@@ -101,7 +101,13 @@ def update(request, id):
     file_name = data['file']
     Shop_info.objects.filter(id=id).update(name=name, background_color=color, url=url, img=file_name)
     return redirect('/')
+
+def add_products(request, id):
+    shop = Shop_info.objects.get(id=id)
+    products = Products.objects.filter(shop=shop)
+    return render(request, 'add_product.html', {'products': products, 'shop': shop})
     
+
 
 
     

@@ -48,6 +48,7 @@
                     <input type="color" name="color" value="{{ shop.background_color }}">
                     <input type="text" name="url"  value="{{ shop.url }}">
                     <input type="file" name="file"  value="{{ shop.img }}">
+                    <a onclick="window.open('/add_products/{{ shop.id }}')">продукты</a>
                     <input type="submit" value="save">
                 </form>
                 {% endfor %}

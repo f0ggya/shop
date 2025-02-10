@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/add_product.css'%}">
+{% endblock %}
+{% block title %}
+редактор магазина {{ shop.name }}
+{% endblock %}
+{% block content %}
+<div id="add_product">
+    <form>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="submit">
+    </form>
+</div>
+
+<div class="container">
+    <button onclick="add_product()">
+        добавить
+    </button>
+    <table>
+        <tr>
+            <th>
+                имя
+            </th>
+            <th>
+                описание
+            </th>
+            <th>
+                цена
+            </th>
+            <th>
+                картинка
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+        <tr>
+            <td>
+                вода
+            </td>
+            <td>
+                []
+            </td>
+            <td>
+                234
+            </td>
+            <td>
+                <img alt="картинка">
+            </td>
+            <td>
+                <button>
+                    gh
+                </button>
+                <button>
+                    gh
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="{% static 'js/add_product.js' %}"></script>
+{% endblock %}

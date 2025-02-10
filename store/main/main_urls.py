@@ -14,7 +14,8 @@ urlpatterns = [
     path('profile/', views.profile),
     path('change_profile', views.change_profile),
     path('create_shop', views.create_shop),
-    path('update/<int:id>', views.update)
+    path('update/<int:id>', views.update),
+    path('add_products/<int:id>', views.add_products)
 ]
 
 if settings.DEBUG:
