@@ -107,7 +107,15 @@ def add_products(request, id):
     products = Products.objects.filter(shop=shop)
     return render(request, 'add_product.html', {'products': products, 'shop': shop})
     
-
+def add_product(request, id):
+    data = request.POST
+    name = data['name']
+    img = data['img']
+    description  = data['description']
+    price = data['price']
+    shop = Shop_info.objects.get(id=id)
+    Products.objects.create(name=name, img=img, description=description, price=price, shop=shop)
+    return redirect('/')
 
 
     
