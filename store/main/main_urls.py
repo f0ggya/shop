@@ -16,7 +16,9 @@ urlpatterns = [
     path('create_shop', views.create_shop),
     path('update/<int:id>', views.update),
     path('add_products/<int:id>', views.add_products),
-    path('add_product/<int:id>', views.add_product)
+    path('add_product/<int:id>', views.add_product),
+    path('del_product/', views.del_product),
+    path('update_product/<int:id>', views.update_product)
 ]
 
 if settings.DEBUG:

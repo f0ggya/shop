@@ -117,6 +117,28 @@ def add_product(request, id):
     Products.objects.create(name=name, img=img, description=description, price=price, shop=shop)
     return redirect('/')
 
+@require_http_methods(["DELETE"])
+@csrf_exempt
+def del_product(request):
+    data = loads(request.body)
+    Products.objects.filter(id=data['id']).delete()
+    return HttpResponse(200)
+
+def update_product(request, id):
+    data = request.POST
+    name = data['name']
+    img = data['img']
+    description = data['description']
+    price = data['price']
+    product = Products.objects.get(id=id)
+    product.name = name
+    product.img = img
+    product.description = description
+    product.price = price
+    product.save()
+    return redirect('/')
+
+
 
     
 

@@ -10,18 +10,27 @@
 <div id="add_product">
     <form action="/add_product/{{ shop.id }}" method="POST">
         {% csrf_token %}
-    <input type="text" name="name" placeholder="название товара">
-    <input type="file" name="img">
-    <input type="text" name="description" placeholder="описание">
-    <input type="number" name="price" placeholder="цена">
+    <input type="text" name="name" placeholder="название товара" id="name">
+    <input type="file" name="img" id="img">
+    <input type="text" name="description" placeholder="описание" id="description">
+    <input type="number" name="price" placeholder="цена" id="price">
     <input type="submit">
     </form>
 </div>
 
 <div class="container">
-    <button onclick="add_product()">
-        добавить
-    </button>
+    <button class="cssbuttons-io-button" onclick="add_product()">
+        <svg
+          height="20"
+          width="20"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+        </svg>
+        <span>добавить</span>
+      </button>
     <table>
         <tr>
             <th>
@@ -41,7 +50,7 @@
             </th>
         </tr>
         {% for product in products %}
-            <tr>
+            <tr id="{{ product.id }}">
                 <td>
                     {{ product.name }}
                 </td>
@@ -56,11 +65,15 @@
                 </td>
                 <td>
                     <div class="actions">
-                        <button>
-                            gh
-                        </button>
+                        <div tabindex="0" class="plusButton" onclick="update_product('{{ product.id }}')">
+                            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                              <g mask="url(#mask0_21_345)">
+                                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                              </g>
+                            </svg>
+                          </div>
                                         <!-- From Uiverse.io by vinodjangid07 --> 
-                        <button class="bin-button">
+                        <button class="bin-button" onclick="del_product('{{ product.id }}')">
                         <svg
                             class="bin-top"
                             viewBox="0 0 39 7"
