@@ -114,8 +114,9 @@ def add_product(request, id):
     description  = data['description']
     price = data['price']
     shop = Shop_info.objects.get(id=id)
+    products = Products.objects.filter(shop=shop)
     Products.objects.create(name=name, img=img, description=description, price=price, shop=shop)
-    return redirect('/')
+    return render(request, 'add_product.html', {'products': products, 'shop': shop})
 
 @require_http_methods(["DELETE"])
 @csrf_exempt
@@ -136,9 +137,11 @@ def update_product(request, id):
     product.description = description
     product.price = price
     product.save()
-    return redirect('/')
+    products = Products.objects.filter(shop=product.shop)
+    return render(request, 'add_product.html', {'products': products, 'shop': product.shop})
 
-
+def catalog(request, id):
+    return render(request, 'catalog.html')
 
     
 

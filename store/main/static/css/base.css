@@ -128,7 +128,8 @@ header {
     position: absolute;
     top: 100%;
     right: 0;
-    display: none; 
+    display: none;
+    z-index: 100; 
     padding: 10px;
 }
 

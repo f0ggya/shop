@@ -14,7 +14,7 @@
         <h2>Магазины</h2>
         <div class="shop_row">
             {% for restaurant in restaurants %}
-            <div class="shop">
+            <div class="shop" onclick="window.location.href = '/catalog/{{ restaurant.id }}'">
                 <img alt="логотип магазина" src="/media/{{restaurant.img}}" style="background-color: {{restaurant.background_color}}">
                 <h4>{{restaurant.name}}</h4>
             </div>

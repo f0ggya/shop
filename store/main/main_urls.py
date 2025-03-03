@@ -18,7 +18,8 @@ urlpatterns = [
     path('add_products/<int:id>', views.add_products),
     path('add_product/<int:id>', views.add_product),
     path('del_product/', views.del_product),
-    path('update_product/<int:id>', views.update_product)
+    path('update_product/<int:id>', views.update_product),
+    path('catalog/<int:id>', views.catalog)
 ]
 
 if settings.DEBUG:

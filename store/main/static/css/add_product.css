@@ -24,6 +24,7 @@ td{
     flex-direction: column;
     padding: 1em;
     background-color: rgb(8, 54, 21);
+    border-radius: 15px;
 }
 
 #add_product form input {
@@ -41,6 +42,12 @@ td{
     height: 100%;
     justify-content: space-around;
     align-items: center;
+}
+
+#add_product a {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1em;
 }
 
 

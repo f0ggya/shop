@@ -1,7 +1,12 @@
 const modal = document.getElementById('add_product')
 
 function add_product(){
-    modal.style.display = 'block'
+    if (modal.style.display == 'block'){
+            modal.style.display = 'none'
+    }
+    else{
+        modal.style.display = 'block'
+    }
 }
 
 function del_product(id){
