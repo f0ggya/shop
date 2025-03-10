@@ -8,11 +8,19 @@
 {% endblock %}
 {% block content %}
 <div class="items">
-    <div class="item">
-        продукт 1
-    </div>
-    <div class="item">
-        продукт 2
-    </div>
+    {% for product in products %}
+        <div class="item">
+            <h3>{{ product.name }}</h3>
+            <h4>{{ product.description }}</h4>
+            <h5>{{ product.price }}</h5>
+            <img src="/media/{{ product.img }}">
+            <button type="button" class="button" onclick="add_cart({{product.id}})">
+                <span class="button__text">Add Item</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+              </button>
+        </div>
+    {% endfor %}
 </div>
+<script src="{% static 'js/cart.js' %}"></script>
 {% endblock %}
+

@@ -64,6 +64,7 @@ def start_reg(request):
         return HttpResponse('false')
     User.objects.create_user(login_, '', password)
     user = authenticate(request, username=login_, password=password)
+    Cart.objects.create(owner=user, cart_products=[])
     login(request, user)
     return redirect('/')
 
@@ -141,11 +142,26 @@ def update_product(request, id):
     return render(request, 'add_product.html', {'products': products, 'shop': product.shop})
 
 def catalog(request, id):
-    return render(request, 'catalog.html')
+    shop = Shop_info.objects.get(id=id)
+    products = Products.objects.filter(shop=shop)
+    return render(request, 'catalog.html', {'shop':shop, 'products': products})
 
-    
+def cart(request):
+    cart = Cart.objects.get(owner=request.user)
+    return render(request, 'cart.html', {'products':cart.cart_products['cart']})
 
-            
-
-
-
+@require_http_methods(["POST"])
+@csrf_exempt            
+def add_cart(request):
+    data = loads(request.body)
+    id = data['id']
+    product = Products.objects.get(id=id)
+    product_json = {
+        'name': product.name,
+        'img': str(product.img),
+        'price': product.price      
+    }
+    cart = Cart.objects.get(owner=request.user)
+    cart.cart_products["cart"][product.id] = product_json
+    cart.save()
+    return HttpResponse(200)

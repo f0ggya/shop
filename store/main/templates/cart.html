@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cart.css'%}">
+{% endblock %}
+{% block title %}
+корзина
+{% endblock %}
+{% block content %}
+{{ products }}
+<table>
+    <tr>
+        <th>
+            имя
+        </th>
+        <th>
+            цена
+        </th>
+        <th>
+            картинка
+        </th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>
+            {{ products }}
+        </td>
+        <td>
+            {{ product.name }}
+        </td>
+        <td>
+            {{ products.product }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
