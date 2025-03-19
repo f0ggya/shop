@@ -1,0 +1,18 @@
+table{
+    width: 100%; 
+}
+
+ th{
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+    text-align: center;
+}
+
+.img{
+    height: 4em;
+}
+
+

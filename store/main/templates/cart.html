@@ -7,7 +7,6 @@
 корзина
 {% endblock %}
 {% block content %}
-{{ products }}
 <table>
     <tr>
         <th>
@@ -20,16 +19,16 @@
             картинка
         </th>
     </tr>
-    {% for product in products %}
+    {% for product_id, product_info in products.items %}
     <tr>
         <td>
-            {{ products }}
+            {{ product_info.name }}
         </td>
         <td>
-            {{ product.name }}
+            {{ product_info.price }}
         </td>
         <td>
-            {{ products.product }}
+            <img src="/media/{{  product_info.img }}" >
         </td>
     </tr>
     {% endfor %}
